@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZ3D Web Editor</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="./css/EZ3D-Editor.style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.159.0/build/three.module.min.js"
+            }
+        }
+    </script>
+    <script src="./lib/EZ3D-Editor.UMD.js"></script>
+</head>
+<body>
+
+    <h1>EZ3D Editor</h1>
+    <div id="editor" class="ez3d"></div>
+    <div>
+        <h3>Text output: <button id='publish-button'>Publish</button></h3>
+        <div id="text-output"></div>
+    </div>
+    
+    <div>
+        <h3>HTML output: <button id='data-button'>Data</button></h3>
+        <pre id="html-output" class="html-output"></pre>
+    </div>
+
+    <script type="module">
+        import { EZ3D_Module_THREE } from './plugins/EZ3D-Editor.plugin.three.js';
+        import { OrbitControls } from 'https://unpkg.com/three@0.159.0/examples/jsm/controls/OrbitControls.js';
+        import * as THREE from 'three';
+
+        const editorElement = document.getElementById('editor');
+        const myEditor = new EZ3D({
+            // actions:[
+            //     'italic',
+            //     'bold',
+            //     'fontMenu',
+            // ],
+            element: editorElement,
+            editorName: 'ez3d-content',
+            onChange: function ( html, models ) {
+                
+                console.log(`datas: ${html}, models: ${models}`)
+                // document.getElementById('html-output').textContent = html;
+            },
+            plugins: [{
+                'threeModules': EZ3D_Module_THREE,
+            }]
+        });
+
+
+        // When receive code datas and 3d models..
+        document.getElementById('publish-button').addEventListener('click', async e => {
+
+            const textOutputArea = document.querySelector('#text-output');
+            const contentNode = document.querySelector(`.${myEditor.editorName}`);
+            const content = await myEditor.getOutputData();
+
+            console.log('content: ', content );
+            console.log('content.code: ', content.code );
+            console.log('content.scens: ', content.scenes );
+            console.log('content.files: ', content.files );
+            console.log('threeDScenes: ', content.threeDScenes );
+            console.log('models:', content.models );
+            console.log('editedScenes: ', content.editedScenes );
+            console.log('textOutputArea: ', textOutputArea );
+            
+            let models = content.models;
+            textOutputArea.innerHTML = contentNode.innerHTML;
+
+            if( models ) {
+                
+                models.map( model => {
+                    
+                    let sceneSerial = model.sceneSerial;
+                    let node = textOutputArea.querySelector(`#${sceneSerial}`);
+                    if( node.firstChild ) node.removeChild( node.firstChild );
+
+                    let obj = model[sceneSerial].clone();
+                    let threeModules = new EZ3D_Module_THREE({
+                            editor: document.querySelector('#editor')
+                        });
+                    threeModules.init( node, obj );
+
+                })
+            
+            }
+
+        })
+
+        // When transfer code datas and models(3d)..
+        document.getElementById('data-button').addEventListener('click', async (e) => {
+
+            const outputDatas = await myEditor.getOutputData( myEditor );
+            console.log('Output: ', outputDatas );
+
+        });
+
+    </script>
+</body>
+</html>
