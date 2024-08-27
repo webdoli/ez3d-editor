@@ -1,5 +1,5 @@
 
-# <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/77be0170-8c6a-4660-b73a-1e25d6c55b8e" alt="Logo" width="48" height="48" /> **MOGL3D-Editor Ver 1.2.1**
+# <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/77be0170-8c6a-4660-b73a-1e25d6c55b8e" alt="Logo" width="48" height="48" /> **EZ3D-Editor Ver 1.2.1**
 
 * `Demo Link`: [MOGL3D.com](https://www.mogl3d.com) ( Ctrl+click: Open link in a new window )
 
