@@ -1,0 +1,26 @@
+{
+  "name": "ez3d-editor",
+  "version": "1.0.0",
+  "description": "3d wysiwyg editor",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdoli/ez3d-editor.git"
+  },
+  "keywords": [
+    "3d",
+    "editor"
+  ],
+  "author": "lee juheon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webdoli/ez3d-editor/issues"
+  },
+  "homepage": "https://github.com/webdoli/ez3d-editor#readme"
+}
