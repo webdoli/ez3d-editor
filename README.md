@@ -1,5 +1,5 @@
 
-# <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/77be0170-8c6a-4660-b73a-1e25d6c55b8e" alt="Logo" width="48" height="48" /> **EZ3D-Editor Ver 1.2.1**
+# <img src="https://github.com/user-attachments/assets/bee73816-93c0-4d17-9e06-d86ef4eb3b16" alt="Logo" width="32" height="32" /> **EZ3D-Editor Ver 0.1**
 
 * `Demo Link`: [MOGL3D.com](https://www.mogl3d.com) ( Ctrl+click: Open link in a new window )
 
@@ -17,9 +17,8 @@ In version 1.xx, only the 3D file upload feature is provided, and the supported 
 * obj
 
 <br>
-
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/0cc9a959-9540-441f-b478-a8f3c4e5edb4" width="86%" />
+    <img src="https://github.com/user-attachments/assets/6c9ff032-fe2f-42f8-89b0-67c6f9be9878" width="640" />
 </div>
 
 
@@ -163,7 +162,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 </p>
 <br>
 <div align="center">
-    <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/1b8a8672-7571-4556-a326-e7c6616f5dbe" width="70%;" />
+    <img src="https://github.com/user-attachments/assets/3383919d-5e62-4cb6-bd8c-0f0c8672bee2" width="70%;" />
 </div>
 <div align="center">
     <span>「basic output」</span>
@@ -248,7 +247,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
 * `output`
 <div align="center">
-    <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/6cef9452-93e4-4d0e-9966-0107b52c6325" />
+    <img src="https://github.com/user-attachments/assets/0d39387d-c989-45b8-948f-7b7fd26d8ca8" />
 </div>
 
 <br>
@@ -320,7 +319,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
 <p>
     <div align="center">
-        <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/e7f1233a-6eb5-40ae-af31-6e546861b5fb" />
+        <img src="https://github.com/user-attachments/assets/4ef6c07b-560c-4279-ae91-68c9c0e95b3a" />
     </div>
 </p>
 
