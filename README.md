@@ -50,12 +50,11 @@ In version 1.xx, only the 3D file upload feature is provided, and the supported 
 
  
 
-#### 2️⃣ mogl3d editor
+#### 2️⃣ EZ3D editor
 
 
   ```html
-    <script src="https://unpkg.com/browse/ez3d-editor@1.0.0/lib/EZ3D-Editor.UMD.js"></script>
-    <script src="https://unpkg.com/browse/ez3d-editor@1.0.0/lib/EZ3D-Editor.min.js"></script>
+    <script src="https://unpkg.com/ez3d-editor@1.0.1/lib/EZ3D-Editor.UMD.js"></script>
   ```
 
 <p>
@@ -68,7 +67,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
 ```html
     <script type="module">
-        import { ThreeModules } from 'https://unpkg.com/browse/ez3d-editor@1.0.0/plugins/EZ3D-Editor.plugin.three.js';
+        import { EZ3D_Module_THREE } from 'https://unpkg.com/ez3d-editor@1.0.1/plugins/EZ3D-Editor.plugin.three.js'
     </script>
 ```
 <p>
@@ -88,7 +87,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 ```html
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/browse/ez3d-editor@1.0.0/css/EZ3D-Editor.style.css">
+        <link rel="stylesheet" href="https://unpkg.com/ez3d-editor@1.0.1/css/EZ3D-Editor.style.css">
     </head>
 ```
 <p>
@@ -114,7 +113,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/browse/ez3d-editor@1.0.0/css/EZ3D-Editor.style.css">
+    <link rel="stylesheet" href="https://unpkg.com/ez3d-editor@1.0.1/css/EZ3D-Editor.style.css">
 
     <script type="importmap">
         {
@@ -123,7 +122,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
             }
         }
     </script>
-    <script src="https://unpkg.com/browse/ez3d-editor@1.0.0/lib/EZ3D-Editor.UMD.js"></script>
+    <script src="https://unpkg.com/ez3d-editor@1.0.1/lib/EZ3D-Editor.UMD.js"></script>
 
 </head>
 <body>
@@ -133,7 +132,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
     <script type="module">
         
-        import { EZ3D_Module_THREE } from 'https://unpkg.com/browse/ez3d-editor@1.0.0/plugins/EZ3D-Editor.plugin.three.js';
+        import { EZ3D_Module_THREE } from 'https://unpkg.com/ez3d-editor@1.0.1/plugins/EZ3D-Editor.plugin.three.js'
         
         const editor = document.getElementById('editor');
         const myEditor = new EZ3D({
@@ -261,17 +260,17 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
 ```html
     <script>
-        import { ThreeModules } from './plugin/threeModules.js';
+        import { EZ3D_Module_THREE } from 'https://unpkg.com/ez3d-editor@1.0.1/plugins/EZ3D-Editor.plugin.three.js'
         const myEditor = new EZ3D({
             // etc..
             plugins: [{
-                'threeModules': ThreeModules,
+                'threeModules': EZ3D_Module_THREE,
             }],
         });
     </script>    
 ```
 <p>
-    ❗Note: As of version 1.1.2, 「threeModules」 need to import "ThreeModules" from './plugin/threeModules.js'
+    ❗Note:「threeModules」 need to import "EZ3D_Module_THREE" from './plugin/EZ3D-Editor.plugin.three.js'
 </p>
 
 <br>
@@ -289,10 +288,20 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
     An example for saving data from a text editor to a server is as follows.
 </p>
 
-* `.getOutputData( ⓐ )`
+* `.getOutputData()`
 
 <p>
-    the result of `[ your editor (id:editor)node ].getOutputData( [your editor (id:editor)node] )` returns "code" & "files" values. 
+    the result of `[ your editor (id:editor)node ].getOutputData()` returns belows. 
+</p>
+
+- code: [String] html source code
+- files: [Array] 3D files and textures for each scene
+- imgFiles: [Array] 2D image files
+- models: [Array] 3D Models
+- scenes: [Array] all 3D scenes className
+- threeDScenes: [Array] same 'scenes'
+- zipFiles: [Array] zip files 
+<p>
     to transfer server these datas, 
         ① converting code to string
         ② files to blob 
@@ -310,7 +319,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
     <script>
         document.getElementById('data-button').addEventListener('click', async (e) => {
 
-            const outputDatas = await myEditor.getOutputData( myEditor );
+            const outputDatas = await myEditor.getOutputData();
             console.log('Output: ', outputDatas );
 
         });
@@ -336,7 +345,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
     <html>
         <head>
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-            <link rel="stylesheet" href="https://unpkg.com/browse/ez3d-editor@1.0.0/css/EZ3D-Editor.style.css">
+            <link rel="stylesheet" href="https://unpkg.com/ez3d-editor@1.0.1/css/EZ3D-Editor.style.css">
             <script type="importmap">
                 {
                     "imports": {
@@ -344,7 +353,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
                     }
                 }
             </script>
-            <script src="https://unpkg.com/browse/ez3d-editor@1.0.0/lib/EZ3D-Editor.module.js"></script>
+            <script src="https://unpkg.com/ez3d-editor@1.0.1/lib/EZ3D-Editor.UMD.js"></script>
         </head>
         <body>
 
@@ -361,7 +370,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
             </div>
 
             <script type="module">
-                import { ThreeModules } from 'https://unpkg.com/browse/ez3d-editor@1.0.0/plugins/EZ3D-Editor.plugin.three.js';
+                import { EZ3D_Module_THREE } from 'https://unpkg.com/ez3d-editor@1.0.1/plugins/EZ3D-Editor.plugin.three.js';
                 import { OrbitControls } from 'https://unpkg.com/three@0.159.0/examples/jsm/controls/OrbitControls.js';
                 import * as THREE from 'three';
 
@@ -379,14 +388,14 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
                         // document.getElementById('html-output').textContent = html;
                     },
                     plugins: [{
-                        'threeModules': ThreeModules,
+                        'threeModules': EZ3D_Module_THREE,
                     }]
                 });
 
 
                 // When transfer datas(html and files) to server..
                 document.getElementById('data-button').addEventListener('click', async (e) => {
-                    const outputDatas = await myEditor.getOutputData( myEditor );
+                    const outputDatas = await myEditor.getOutputData();
                     console.log('Output: ', outputDatas );
                 });
 
@@ -396,26 +405,27 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
                     const textOutputArea = document.querySelector('#text-output');
                     const contentNode = document.querySelector(`.${myEditor.editorName}`);
-                    let models = myEditor.getModels();
-
-                        textOutputArea.innerHTML = contentNode.innerHTML;
+                    const content = await myEditor.getOutputData();
+                    let models = content.models;
+                    textOutputArea.innerHTML = contentNode.innerHTML;
 
                         if( models ) {
                 
                             models.map( model => {
-                    
-                                for( let item in model ) {
-                        
-                                    let node = textOutputArea.querySelector(`[title="${item}"]`);
+
+                                models.map( model => {
+                                    let sceneSerial = model.sceneSerial;
+                                    let node = textOutputArea.querySelector(`#${sceneSerial}`);
                                     if( node.firstChild ) node.removeChild( node.firstChild );
-                        
-                                    let obj = model[item].clone();
-                                    let threeModules = new ThreeModules({
+
+                                    let obj = model[sceneSerial].clone();
+                                    let threeModules = new EZ3D_Module_THREE({
                                         editor: document.querySelector('#editor')
                                     });
-                            
+
                                     threeModules.init( node, obj );
-                                }
+                                })
+                                
                             }) // .map() End
                 
                         } // if End
