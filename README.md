@@ -465,4 +465,4 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
 
 ## 📜 License
-This software is licensed under the MIT, ©CGHUB
+openSource, MIT
