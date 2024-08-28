@@ -14,20 +14,82 @@
         }
     </script>
     <script src="./lib/EZ3D-Editor.UMD.js"></script>
+    <style>
+        .EZ3D-container {
+            margin:0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1080px;
+            padding: 5rem 2.5rem;
+            gap: 1rem;
+        }
+
+        .ez3d {
+            width: 100%;
+        }
+
+        .text-output,
+        .html-output {
+            width: 100%;
+        }
+
+        .html-output pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: pre-line;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* output */
+        /* .text-output,
+        .html-output {
+            max-width: 720px;
+            overflow-x: none;
+            padding: 10px;
+            border: 1px solid tomato;
+            margin: 0 auto;
+            min-height: 200px;
+            white-space: normal;
+        } */
+
+    </style>
 </head>
 <body>
 
-    <h1>EZ3D Editor</h1>
-    <div id="editor" class="ez3d"></div>
-    <div>
-        <h3>Text output: <button id='publish-button'>Publish</button></h3>
-        <div id="text-output"></div>
+    <div class="EZ3D-container">
+        <div class="title">
+            <img src="./src/EZ3D_BRAND_LOGO.png" class="logo" alt="">
+            <h1 class="title">
+                EZ3D Editor
+            </h1>
+        </div>
+        
+        <div id="editor" class="ez3d"></div>
+        <div class="text-output">
+            <h3>Text output: <button id='publish-button'>Publish</button></h3>
+            <div id="text-output"></div>
+        </div>
+
+        <div class="html-output">
+            <h3>HTML output: <button id='data-button'>Data</button></h3>
+            <pre id="html-output" class="html-output"></pre>
+        </div>
     </div>
     
-    <div>
-        <h3>HTML output: <button id='data-button'>Data</button></h3>
-        <pre id="html-output" class="html-output"></pre>
-    </div>
 
     <script type="module">
         import { EZ3D_Module_THREE } from './plugins/EZ3D-Editor.plugin.three.js';
@@ -69,7 +131,7 @@
             console.log('models:', content.models );
             console.log('editedScenes: ', content.editedScenes );
             console.log('textOutputArea: ', textOutputArea );
-            
+
             let models = content.models;
             textOutputArea.innerHTML = contentNode.innerHTML;
 
@@ -96,8 +158,9 @@
         // When transfer code datas and models(3d)..
         document.getElementById('data-button').addEventListener('click', async (e) => {
 
-            const outputDatas = await myEditor.getOutputData( myEditor );
-            console.log('Output: ', outputDatas );
+            const outputDatas = await myEditor.getOutputData();
+            const html_output = document.querySelector('#html-output');
+            html_output.textContent = outputDatas.code;
 
         });
 
