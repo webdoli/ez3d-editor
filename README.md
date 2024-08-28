@@ -17,11 +17,8 @@ In version 1.xx, only the 3D file upload feature is provided, and the supported 
 * obj
 
 <br>
-<div align="center">
-    <a href="https://www.youtube.com/watch?v=m1Vo-S3Dm0s" target="_blank">
-        <img src="https://img.youtube.com/vi/m1Vo-S3Dm0s/0.jpg" alt="Watch the video">
-    </a>
-</div>
+
+[![Watch the video](https://img.youtube.com/vi/m1Vo-S3Dm0s/0.jpg)](https://www.youtube.com/watch?v=m1Vo-S3Dm0s)
 
 <br>
 <br>
