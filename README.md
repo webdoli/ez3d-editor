@@ -1,5 +1,5 @@
 
-# <img src="https://github.com/user-attachments/assets/bee73816-93c0-4d17-9e06-d86ef4eb3b16" alt="Logo" width="32" height="32" /> **EZ3D-Editor Ver 0.1**
+# <img src="https://github.com/user-attachments/assets/bee73816-93c0-4d17-9e06-d86ef4eb3b16" alt="Logo" width="32" height="32" /> **EZ3D-Editor Ver 1.0.1**
 
 * `Demo Link`: [MOGL3D.com](https://www.mogl3d.com) ( Ctrl+click: Open link in a new window )
 
