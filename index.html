@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EZ3D Web Editor</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="./css/EZ3D-Editor.style.css">
+    <!-- <link rel="stylesheet" href="./css/EZ3D-Editor.style.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/ez3d-editor@1.0.1/css/EZ3D-Editor.style.css">
     <script type="importmap">
         {
             "imports": {
@@ -13,7 +14,8 @@
             }
         }
     </script>
-    <script src="./lib/EZ3D-Editor.UMD.js"></script>
+    <!-- <script src="./lib/EZ3D-Editor.UMD.js"></script> -->
+    <script src="https://unpkg.com/ez3d-editor@1.0.1/lib/EZ3D-Editor.UMD.js"></script>
     <style>
         .EZ3D-container {
             margin:0 auto;
@@ -92,7 +94,8 @@
     
 
     <script type="module">
-        import { EZ3D_Module_THREE } from './plugins/EZ3D-Editor.plugin.three.js';
+        import { EZ3D_Module_THREE } from 'https://unpkg.com/ez3d-editor@1.0.1/plugins/EZ3D-Editor.plugin.three.js'
+        // import { EZ3D_Module_THREE } from './plugins/EZ3D-Editor.plugin.three.js';
         import { OrbitControls } from 'https://unpkg.com/three@0.159.0/examples/jsm/controls/OrbitControls.js';
         import * as THREE from 'three';
 
