@@ -12,7 +12,7 @@
     background-color: rgba(66, 66, 66, 0.8);
 }
 
-div {
+.ez3d-content {
     display: block;
 }
 
@@ -34,7 +34,7 @@ div {
     background-color: #F0F0F0;
 }
 
-#editor {
+.ez3d {
     display: flex;
     max-width: 1080px;
     margin: 20px auto;
@@ -47,7 +47,7 @@ div {
     font-family: 'Arial', sans-serif;
 }
 
-#editor::selection {
+.ez3d::selection {
     background-color: #555;
     color: #fff;
 }
@@ -83,7 +83,7 @@ div {
     font-size: 0.8em;
 }
 
-span.divider {
+.ez3d span.divider {
     height:1.5em;
     margin-top: .5em;
     margin-left: 10px;
@@ -231,7 +231,7 @@ span.divider {
     width: 100%;
 }
 
-.modal {
+.ez3d .modal {
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -244,48 +244,25 @@ span.divider {
     background-color: rgba(0,0,0,0.4); 
 }
 
-.modal-content {
+.ez3d .modal-content {
     background-color: #fefefe;
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
 }
-  
+
 /* Close Button */
-.modalClose {
+.ez3d .modalClose {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.modalClose:hover,
-.modalClose:focus {
+.ez3d .modalClose:hover,
+.ez3d .modalClose:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}  
-
-
-/* output */
-#text-output {
-    margin-top: 20px;
-    margin: 0 auto;
-    max-width: 1080px;
-    padding: 2.4rem;
-    background: #333;
-    border-radius: 4px;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.html-output {
-    max-width: 720px;
-    overflow-x: none;
-    padding: 10px;
-    border: 1px solid tomato;
-    margin: 0 auto;
-    min-height: 200px;
-    white-space: normal;
 }
