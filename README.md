@@ -18,7 +18,9 @@ In version 1.xx, only the 3D file upload feature is provided, and the supported 
 
 <br>
 
-[![Watch the video](https://img.youtube.com/vi/m1Vo-S3Dm0s/0.jpg)](https://www.youtube.com/watch?v=m1Vo-S3Dm0s)
+<div align="center">
+    <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/cd8a6627-e82a-4903-9ad9-daabb3ce3823" width="86%" />
+</div>
 
 <br>
 <br>
